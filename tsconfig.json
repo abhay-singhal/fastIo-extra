@@ -8,6 +8,7 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "types": ["@vercel/node"],
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
@@ -36,6 +37,7 @@
     "client/**/*",
     "server/**/*",
     "shared/**/*",
+    "api/**/*",
     "vite.config.ts",
     "vite.config.server.ts"
   ],
