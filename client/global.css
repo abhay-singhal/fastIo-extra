@@ -1,0 +1,116 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   */
+  :root {
+    /* Darker base theme */
+    --background: 230 15% 8%;
+    --foreground: 210 40% 96%;
+
+    --card: 230 15% 10%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 230 15% 10%;
+    --popover-foreground: 210 40% 96%;
+
+    /* Novaforge brand */
+    --brand: 262 83% 58%; /* violet */
+    --brand-2: 200 100% 50%; /* cyan */
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 200 100% 50%;
+    --accent-foreground: 210 40% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 22%;
+    --input: 220 14% 22%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.8rem;
+
+    --sidebar-background: 230 15% 10%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 220 14% 22%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 230 15% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 15% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 15% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --brand: 262 83% 62%;
+    --brand-2: 200 100% 55%;
+
+    --primary: 262 83% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 15% 14%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 200 100% 55%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 20%;
+    --input: 220 14% 20%;
+    --ring: 262 83% 62%;
+
+    --sidebar-background: 230 15% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 262 83% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 14%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 14% 20%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image: theme("backgroundImage.hero-gradient");
+    background-attachment: fixed;
+  }
+}
