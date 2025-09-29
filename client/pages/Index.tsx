@@ -471,7 +471,7 @@ export default function Index() {
               <Button disabled={submitting} type="submit" className="bg-gradient-to-r from-brand via-brand2 to-brand bg-[length:200%_200%] animate-gradient-x text-white shadow-lg shadow-brand/30">
                 {submitting ? "Sending..." : "Send message"}
               </Button>
-              <a className="text-sm text-muted-foreground underline" href="mailto:singhalabhay19@gmail.com">or email us directly</a>
+              <a className="text-sm text-muted-foreground underline" href="mailto:business@fastio.in">or email us directly</a>
             </div>
           </form>
         </div>
