@@ -47,12 +47,29 @@ export default function Index() {
     }
   };
 
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) => {
+    const href = (e.currentTarget.getAttribute("href") || "").trim();
+    if (href.startsWith("#")) {
+      const id = href.slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        const header = document.getElementById("site-header");
+        const offset = (header?.offsetHeight ?? 0) + 12;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <div>
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,hsl(var(--foreground)/0.06)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--foreground)/0.06)_1px,transparent_1px)] bg-[size:40px_40px] opacity-30" />
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 -z-10">
           {/** decorative */}
           <span className="absolute inset-0 animate-spin-slow" />
         </div>
@@ -80,16 +97,19 @@ export default function Index() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <a href="#contact">
+                <a href="#contact"
+                  onClick={handleAnchorClick}>
                   <Button
                     size="lg"
+                   
                     className="bg-gradient-to-r from-brand via-brand2 to-brand bg-[length:160%_160%] text-white shadow-xl shadow-brand/30 hover:shadow-brand/40 transition-all duration-500 hover:scale-[1.02]"
                   >
                     Start a project
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </a>
-                <a href="#work">
+
+                <a href="#work" onClick={handleAnchorClick}>
                   <Button size="lg" variant="outline">
                     See our work
                   </Button>
