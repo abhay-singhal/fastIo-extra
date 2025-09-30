@@ -17,12 +17,20 @@ import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
   host: "smtpout.secureserver.net",
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.EMAIL_USER || "business@fastio.in",
     pass: process.env.EMAIL_PASSWORD,
   },
 });
-
+transporter.verify((error, success) => {
+  if (error) {
+    console.error("❌ SMTP Connection Error:", error.message);
+  } else {
+    console.log("✅ SMTP Server is ready to send emails");
+  }
+});
 
 
 export const handleContact: RequestHandler = async (req, res) => {
