@@ -16,7 +16,7 @@ export function SiteFooter() {
             Contact:{" "}
             <a
               className="underline hover:text-foreground"
-              href="mailto:singhalabhay19@gmail.com"
+              href="mailto:business@fastio.in"
             >
               business@fastio.in
             </a>
