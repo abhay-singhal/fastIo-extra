@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: process.env.EMAIL_USER || "business@fastio.in",
+    user: process.env.EMAIL_USER || "buisness@fastio.in",
     pass: process.env.EMAIL_PASSWORD,
   },
 });
