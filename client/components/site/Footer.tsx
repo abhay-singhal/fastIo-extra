@@ -18,7 +18,7 @@ export function SiteFooter() {
               className="underline hover:text-foreground"
               href="mailto:singhalabhay19@gmail.com"
             >
-              buisness@fastio.in
+              business@fastio.in
             </a>
           </p>
           <p className="mt-2">

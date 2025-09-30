@@ -17,10 +17,8 @@ import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
   host: "smtpout.secureserver.net",
-  port: 465,
-  secure: true,
   auth: {
-    user: process.env.EMAIL_USER || "buisness@fastio.in",
+    user: process.env.EMAIL_USER || "business@fastio.in",
     pass: process.env.EMAIL_PASSWORD,
   },
 });
